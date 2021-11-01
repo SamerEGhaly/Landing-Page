@@ -1,0 +1,3 @@
+# Landing Page Project
+
+This project aims to add a dynamic navigation bar to a static web page containing multiple sections. The bar grows dynamically each time a new section is added to the page. Each button in the bar is linked to a specific section on the page and navigates to this section when clicked. The section that is being viewed is set to an active state that distinguished it from other sections.

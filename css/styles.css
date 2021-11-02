@@ -198,6 +198,12 @@ section.your-active-class {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
+li.your-active-class {
+    background: #333;
+    color: #fff;
+    transition: ease 1s all;
+}
+
 section.your-active-class .landing__container::before {
     opacity: 1;
     animation: rotate 4s linear 0s infinite forwards;

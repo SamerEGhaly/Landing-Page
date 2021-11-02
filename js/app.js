@@ -25,6 +25,7 @@
 
 let sections; // to hold the list of sections in the page
 let navList;  // to hold the navigation bar list
+let navButtons; // to hold list items of navigation bar
 
 /**
  * End Global Variables
@@ -68,11 +69,13 @@ function findTopSection() // find the section nearest to the top of the page and
 function setActiveSection() // finds the nearest section to the viewport top and adds it to the .your-active-class class to apply css
 {
     const newIndex = findTopSection();
-    const activeSection = document.querySelector(".your-active-class"); // find current active section
+    const activeSection = document.querySelector("section.your-active-class"); // find current active section
     let oldIndex = Number((activeSection.getAttribute("data-nav").split(" "))[1]) - 1; // extract the section number from its data-nav attribute and calculate its index in the sections list
+    sections[newIndex].classList.add("your-active-class");
+    navButtons[newIndex].classList.add("your-active-class");
     if(oldIndex != newIndex) // if the top section and the active section are not the same, change their states by adjusting their classLists
     {
-        sections[newIndex].classList.add("your-active-class");
+        navButtons[oldIndex].classList.remove("your-active-class");
         sections[oldIndex].classList.remove("your-active-class");
     }
 }
@@ -88,7 +91,7 @@ navList = document.querySelector("#navbar__list");
 
 // build the navigation bar
 initNavBar();
-
+navButtons = document.querySelectorAll(".menu__link");
 // Add class 'active' to section when near top of viewport
 
 setActiveSection(); // set the active section at the beginning
